@@ -1,0 +1,32 @@
+{
+  "name": "morph-object",
+  "version": "1.0.0",
+  "description": "Tiny helper lib for morphing objects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sdepold/morph-object.git"
+  },
+  "keywords": [
+    "object",
+    "morph",
+    "helper"
+  ],
+  "author": "Sascha Depold",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sdepold/morph-object/issues"
+  },
+  "homepage": "https://github.com/sdepold/morph-object",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "gulp": "^3.8.10",
+    "gulp-jshint": "^1.9.0",
+    "gulp-mocha": "^1.1.1",
+    "jshint-stylish": "^1.0.0",
+    "mocha": "^2.0.1"
+  }
+}
