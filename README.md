@@ -1,4 +1,4 @@
-# morph-object
+# morph-object [![Build Status](https://travis-ci.org/sdepold/morph-object.svg?branch=master)](https://travis-ci.org/sdepold/morph-object)
 
 Tiny helper lib that morphs objects.
 
