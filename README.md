@@ -14,17 +14,17 @@ npm install morph-object
 var assert = require('assert');
 var morph  = require('morph-object');
 
-assert(
+assert.deepEqual(
   morph({ bucket: 'my-bucket', key: 'my-key' }, { key: 'prefix' }),
   { bucket: 'my-bucket', prefix: 'my-key' }
 );
 
-assert(
+assert.deepEqual(
   morph({ bucket: 'my-bucket', key: 'my-key' }, { bucket: 'folder', key: 'prefix' }),
   { folder: 'my-bucket', prefix: 'my-key' }
 );
 
-assert(
+assert.deepEqual(
   morph.swapKey({ a: 1 }, 'a', 'b'),
   { b: 1 }
 );
