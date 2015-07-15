@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (obj, rules) {
+var morph = module.exports = function (obj, rules) {
   rules = rules || {};
 
   if (!isObject(obj)) {
@@ -15,12 +15,24 @@ module.exports = function (obj, rules) {
 
   Object.keys(obj).forEach(function (key) {
     var attr = rules.hasOwnProperty(key) ? rules[key] : key;
+
     result[attr] = obj[key];
   });
 
   return result;
 };
 
-function isObject(obj) {
+morph.swapKey = function (obj, source, target) {
+  if (obj.hasOwnProperty(source)) {
+    var originalValue = obj[source];
+
+    obj[target] = originalValue;
+    delete obj[source];
+  }
+
+  return obj;
+};
+
+function isObject (obj) {
   return (obj === Object(obj)) && !(obj instanceof Array);
 }

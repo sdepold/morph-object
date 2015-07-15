@@ -44,4 +44,14 @@ describe('morph-object', function () {
   it('changes the key of the argument copy', function () {
     expect(morph({ a: 1 }, { a: 'b' })).to.eql({ b: 1 });
   });
+
+  describe('swapKey', function () {
+    it('swaps the key', function () {
+      expect(morph.swapKey({ a: 1 }, 'a', 'b')).to.eql({ b: 1 });
+    });
+
+    it('ignores non existing keys', function () {
+      expect(morph.swapKey({ a: 1 }, 'b', 'c')).to.eql({ a: 1 });
+    });
+  });
 });
