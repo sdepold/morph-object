@@ -2,7 +2,7 @@
 
 'use strict';
 
-var morph  = require('../index');
+var morph  = require('../../index');
 var expect = require('expect.js');
 
 describe('morph-object', function () {
@@ -24,11 +24,13 @@ describe('morph-object', function () {
 
   it('returns the first argument if no second one is passed', function () {
     var arg = { a: 1 };
+
     expect(morph(arg)).to.eql(arg);
   });
 
   it('returns the first argument if the second does not relate', function () {
     var arg = { a: 1 };
+
     expect(morph(arg, { b: 'c' })).to.eql(arg);
   });
 
