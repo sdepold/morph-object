@@ -11,18 +11,23 @@ npm install morph-object
 ## Usage
 
 ```js
-var morph = require('morph-object');
+var assert = require('assert');
+var morph  = require('morph-object');
 
-morph({ bucket: 'my-bucket', key: 'my-key' }, { key: 'prefix' });
-```
+assert(
+  morph({ bucket: 'my-bucket', key: 'my-key' }, { key: 'prefix' }),
+  { bucket: 'my-bucket', prefix: 'my-key' }
+);
 
-This will result in:
+assert(
+  morph({ bucket: 'my-bucket', key: 'my-key' }, { bucket: 'folder', key: 'prefix' }),
+  { folder: 'my-bucket', prefix: 'my-key' }
+);
 
-```js
-{
-  bucket: 'my-bucket',
-  prefix: 'my-key'
-}
+assert(
+  morph.swapKey({ a: 1 }, 'a', 'b'),
+  { b: 1 }
+);
 ```
 
 ## License
